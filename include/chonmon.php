@@ -1,4 +1,12 @@
 
+<?php 
+if(!isset($_SESSION["username"])){
+  header("Location: index.php?a=login");
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
     <title>Chọn Môn</title>

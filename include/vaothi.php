@@ -1,14 +1,11 @@
 
-<?php
-if(!($_COOKIE["mycookie"])){
-  $expiry = time() + 60;
-  setcookie("mycookie", "$expiry", $expiry);
-}
+<?php 
 
-// get
+if(!isset($_COOKIE['mycookie'])){
+      $expiry = time() + 3660;
+      setcookie('mycookie', $expiry, $expiry);
+  }
  ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
     <title>Vào Thi</title>
@@ -16,7 +13,14 @@ if(!($_COOKIE["mycookie"])){
     <!-- <link rel="stylesheet" href="form.css"> -->
   </head>
   <body>
-    <input type="hidden" id="thoigian" value="<?php  echo round(($_COOKIE["mycookie"] - time())/60,1); ?>">
+    <input type="hidden" id="thoigian" value="<?php 
+     if(!isset($_COOKIE['mycookie'])){
+       echo 60;
+     
+    }else{
+      echo round(($_COOKIE['mycookie'] - time())/60,1);
+    } 
+     ?>">
     <div class="container" style="width: 1600px;">
           <?php include('menu.html') ?>
         <form action="index.php?a=ketqua" method="POST">
@@ -79,16 +83,25 @@ if(!($_COOKIE["mycookie"])){
                   <?php } ?>
                 </ul>
               </div>
-              <div class="col-md-12 nopbai">
+              <div class="col-md-6 nopbai">
                 <button class="btn btn-primary col-md-6" id="nopbai">Nộp Bài</button>
+                  </form> 
+
+                  <button class="btn btn-primary col-md-6" id="nhacnho" style="margin-top: -20px;">Nộp Bài 1</button>
               </div>
+               
+            
+
             </div>
           </div>
         </div>
 
-   </form>  
+
       </div>
+
+          
     </div>
+
   </body>
   <script type="text/javascript">
   function tick(){
@@ -135,29 +148,38 @@ if(!($_COOKIE["mycookie"])){
   intervalHandle = setInterval(tick, 1000);
   }
   window.onload = function(){
-  startCountdown();
-    swal({
+   startCountdown();
+  // window.location.reload();
+  //   window.location.reload().stop();
+  swal({
       title: "Chú Ý",
       text: "Bạn đang thực hiện bài thi. Vui lòng không bấm F5 hoặc tải lại trình duyệt. Để tránh bị mất kết quả đang thi",
       type: "warning"
-    })
+    });
+
   }
   </script>
     
   <script type="text/javascript">
+      var socau = 0;
+      var id;
   $(document).ready(function(){
+
   $('.traloi').mousemove(function(e){
-  var id1 = e.target.dataset.id;
-  var id = $('#'+id1).val();
-  console.log(id);
-  
-  $('.traloi' + id).click(function(){
-  
-  console.log(id);
-  $('.cau'+id).addClass('active-cauhoi');
+    var id1 = e.target.dataset.id;
+    var id = $('#'+id1).val();
+  // console.log(id);
+
+
+      $('.traloi' + id).click(function(){
+           
+            socau = socau + 1;
+            console.log(socau);
+      // console.log(id);
+      $('.cau'+id).addClass('active-cauhoi');
+       });
   });
-  });
+
   });
   </script>
-
 </html>
