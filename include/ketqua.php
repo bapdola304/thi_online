@@ -1,3 +1,13 @@
+
+
+
+<?php 
+    $arr = $_POST;
+    var_dump($arr);
+
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
     <title>Kết Quả</title>

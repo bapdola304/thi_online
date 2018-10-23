@@ -37,14 +37,18 @@
     <?php
     if(isset($_GET['a']) && $_GET['a']=='login'){
             include "include/login.php";
+            include "include/footer.html";
     }else if(isset($_GET['a']) && $_GET['a']=='register'){
          include "include/registe.php";
+            include "include/footer.html";
     }
     else if(isset($_GET['a']) && $_GET['a']=='chonmon'){
          include "include/chonmon.php";
+            include "include/footer.html";
     }
      else if(isset($_GET['a']) && $_GET['a']=='chonde'){
          include "include/chonde.php";
+        include "include/footer.html";
     }
 
       else if(isset($_GET['a']) && $_GET['a']=='vaothi'){
@@ -52,6 +56,7 @@
     }
       else if(isset($_GET['a']) && $_GET['a']=='ketqua'){
          include "include/ketqua.php";
+         include "include/footer.html";
     }
     else{
          include "include/header.php";
