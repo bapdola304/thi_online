@@ -16,7 +16,7 @@ setcookie('mycookie', $expiry, $expiry);
   echo 60;
   
   }else{
-  echo round(($_COOKIE['mycookie'] - time())/60,1);
+  echo round(($_COOKIE['mycookie'] - time())/60 - 1,1);
   }
   ?>">
   <div class="container" style="width: 1600px;">
