@@ -1,11 +1,7 @@
 
 <?php
-include('../connect/connect.php');
+@include('../connect/connect.php');
 	$errors = array();
-	$_SESSION['success'] = "";
-
-
-
 	if (isset($_POST['registe'])) 
 	{
 	// lấy dữ liệu

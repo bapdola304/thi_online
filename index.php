@@ -36,8 +36,7 @@
 <body>
     <?php
     if(isset($_GET['a']) && $_GET['a']=='login'){
-            include "include/login.php";
-            include "include/footer.html";
+            include "include/login.php";    
     }else if(isset($_GET['a']) && $_GET['a']=='register'){
          include "include/registe.php";
             include "include/footer.html";
@@ -48,7 +47,6 @@
     }
      else if(isset($_GET['a']) && $_GET['a']=='chonde'){
          include "include/chonde.php";
-        include "include/footer.html";
     }
 
       else if(isset($_GET['a']) && $_GET['a']=='vaothi'){

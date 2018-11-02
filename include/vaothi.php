@@ -1,6 +1,6 @@
 <?php
 if(!isset($_COOKIE['mycookie'])){
-$expiry = time() + 3660;
+$expiry = time() + 3600;
 setcookie('mycookie', $expiry, $expiry);
 }
 ?>
@@ -19,12 +19,13 @@ setcookie('mycookie', $expiry, $expiry);
   echo round(($_COOKIE['mycookie'] - time())/60 - 1,1);
   }
   ?>">
-  <div class="container" style="width: 1600px;">
+  <div class="container" style="width: 1390px;">
     <?php include('menu.html') ?>
     <div class="content">
       <div class="col-md-8 left">
         <h2>Kỳ thi THPTQG 2018 - Đề thi minh hoạ</h2>
         <?php for($i=1; $i<=5; $i++) {?>
+          <div class="row">
         <div class="motcau" value="<?php echo $i ?>">
           <input type="hidden" id="valcau<?php echo $i ?>" value="<?php echo $i ?>">
           <div class="cau">
@@ -32,36 +33,75 @@ setcookie('mycookie', $expiry, $expiry);
           </div>
           <form action="index.php?a=ketqua" method="POST">
             <div class="dethi">
-              <img src="http://onthidaihoc.online/images/Screen_Shot_20180320_at_12332_PM.png" alt="" width="900" height="80">
+              <div class="decauhoi col-md-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, sequi!</div>
+              <div class="dehinh col-md-7">
+                <img src="http://onthidaihoc.online/images/Screen_Shot_20180320_at_12332_PM.png" alt="" width="100%" height="100%">
+              </div>
             </div>
             <div class="traloi">
-              <div class="traloi<?php echo $i ?>">
-                
-                
+              <div class="traloi<?php echo $i ?>">               
                 <a href="#">
                   <i data-id="valcau<?php echo $i ?>" />
                 </a>
                 
-                
-                <label class="radio-inline"  data-id="valcau<?php echo $i ?>">
-                  <input type="radio" name="<?php echo $i ?>" id="cau1" data-id="valcau<?php echo $i ?>" value="a" class="option-input radio">A. 20
-                </label>
-                <label class="radio-inline" data-id="valcau<?php echo $i ?>">
-                  <input type="radio" name="<?php echo $i ?>" id="cau1" data-id="valcau<?php echo $i ?>" value="b" class="option-input radio">B. 30
-                </label>
-                <label class="radio-inline" data-id="valcau<?php echo $i ?>">
-                  <input type="radio" name="<?php echo $i ?>" id="cau1" data-id="valcau<?php echo $i ?>" value="c" class="option-input radio" >C. 40
-                </label>
-                <label class="radio-inline" data-id="valcau<?php echo $i ?>">
-                  <input type="radio" name="<?php echo $i ?>" id="cau1" data-id="valcau<?php echo $i ?>" value="d"  class="option-input radio" >D. 50
-                </label>
+                <div class="item-traloi col-md-3" style="padding:0">
+                  <label class="radio-inline"  data-id="valcau<?php echo $i ?>">
+                    <input type="radio" name="<?php echo $i ?>" id="cau1" data-id="valcau<?php echo $i ?>" value="a" class="option-input radio">A
+                  </label>
+                  <div class="text-traloi col-md-6" style="padding:0">
+                    A. Lorem ipsum dolor sit.
+                  </div>
+                  <div class="img-traloi col-md-6 " style="padding:0">
+                    <img src="http://onthidaihoc.online/images/Screen_Shot_20180320_at_12332_PM.png" alt="" width="100%" height="100%">
+                  </div>
+                </div>
+
+                 <div class="item-traloi col-md-3" style="padding:0">
+                  <label class="radio-inline"  data-id="valcau<?php echo $i ?>">
+                    <input type="radio" name="<?php echo $i ?>" id="cau1" data-id="valcau<?php echo $i ?>" value="b" class="option-input radio">B
+                  </label>
+                  <div class="text-traloi col-md-6" style="padding:0">
+                    A. Lorem ipsum dolor sit.
+                  </div>
+                  <div class="img-traloi col-md-6 " style="padding:0">
+                    <img src="http://onthidaihoc.online/images/Screen_Shot_20180320_at_12332_PM.png" alt="" width="100%" height="100%">
+                  </div>
+                </div>
+
+                 <div class="item-traloi col-md-3" style="padding:0">
+                  <label class="radio-inline"  data-id="valcau<?php echo $i ?>">
+                    <input type="radio" name="<?php echo $i ?>" id="cau1" data-id="valcau<?php echo $i ?>" value="c" class="option-input radio">C
+                  </label>
+                  <div class="text-traloi col-md-6" style="padding:0">
+                    A. Lorem ipsum dolor sit.
+                  </div>
+                  <div class="img-traloi col-md-6 " style="padding:0">
+                    <img src="http://onthidaihoc.online/images/Screen_Shot_20180320_at_12332_PM.png" alt="" width="100%" height="100%">
+                  </div>
+                </div>
+
+                 <div class="item-traloi col-md-3" style="padding:0">
+                    <label class="radio-inline"  data-id="valcau<?php echo $i ?>">
+                      <input type="radio" name="<?php echo $i ?>" id="cau1" data-id="valcau<?php echo $i ?>" value="d" class="option-input radio">D
+                    </label>
+                    <div class="text-traloi col-md-6" style="padding:0">
+                      A. Lorem ipsum dolor sit.
+                    </div>
+                    <div class="img-traloi col-md-6 " style="padding:0">
+                      <img src="http://onthidaihoc.online/images/Screen_Shot_20180320_at_12332_PM.png" alt="" width="100%" height="100%">
+                    </div>
+                  </div>
               </div>
+
+
+
+</div>
+              
             </div>
-            
           </div>
           <?php } ?>
         </div>
-        <div class="col-md-3 right" style="position: fixed;right: 80px;width: 475px;background: #f5f5f5;">
+        <div class="col-md-3 right" style="position: fixed;right: 84px;width: 400px;background: #f5f5f5;">
           <p>Chào Bạn:  Nguyen Van Lanh</p>
           
           <div class="thi">

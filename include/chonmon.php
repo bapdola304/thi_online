@@ -12,7 +12,7 @@ if(!isset($_SESSION["username"])){
     <title>Chọn Môn</title>
   <body>
              <?php include('menu.html') ?>
-    <div class="container" style="width: 1600px;">
+    <div class="container" style="width: 1390px;">
      
 
 
@@ -20,36 +20,36 @@ if(!isset($_SESSION["username"])){
         <div class="col-md-8 left">
           <div class="col-md-4 item">
             <a href="index.php?a=chonde">
-            <img src="http://onthidaihoc.online//media/com_vquiz/vquiz/images/photoupload/thumbs/thumb_1521529921_mon-toan.png" width="300">
+            <img src="http://onthidaihoc.online//media/com_vquiz/vquiz/images/photoupload/thumbs/thumb_1521529921_mon-toan.png" width="100%">
             <p>Môn Toán</p>
             </a>
           </div>
           <div class="col-md-4 item">
-            <img src="http://onthidaihoc.online//media/com_vquiz/vquiz/images/photoupload/thumbs/thumb_1521529921_mon-toan.png" width="300">
+            <img src="http://onthidaihoc.online//media/com_vquiz/vquiz/images/photoupload/thumbs/thumb_1521529921_mon-toan.png" width="100%">
             <p>Môn Toán</p>
           </div>
           <div class="col-md-4 item">
-            <img src="http://onthidaihoc.online//media/com_vquiz/vquiz/images/photoupload/thumbs/thumb_1521529921_mon-toan.png" width="300">
+            <img src="http://onthidaihoc.online//media/com_vquiz/vquiz/images/photoupload/thumbs/thumb_1521529921_mon-toan.png" width="100%">
             <p>Môn Toán</p>
           </div>
           <div class="col-md-4 item">
-            <img src="http://onthidaihoc.online//media/com_vquiz/vquiz/images/photoupload/thumbs/thumb_1521529921_mon-toan.png" width="300">
+            <img src="http://onthidaihoc.online//media/com_vquiz/vquiz/images/photoupload/thumbs/thumb_1521529921_mon-toan.png" width="100%">
             <p>Môn Toán</p>
           </div>
           <div class="col-md-4 item">
-            <img src="http://onthidaihoc.online//media/com_vquiz/vquiz/images/photoupload/thumbs/thumb_1521529921_mon-toan.png" width="300">
+            <img src="http://onthidaihoc.online//media/com_vquiz/vquiz/images/photoupload/thumbs/thumb_1521529921_mon-toan.png" width="100%">
             <p>Môn Toán</p>
           </div>
           <div class="col-md-4 item">
-            <img src="http://onthidaihoc.online//media/com_vquiz/vquiz/images/photoupload/thumbs/thumb_1521529921_mon-toan.png" width="300">
+            <img src="http://onthidaihoc.online//media/com_vquiz/vquiz/images/photoupload/thumbs/thumb_1521529921_mon-toan.png" width="100%">
             <p>Môn Toán</p>
           </div>
           <div class="col-md-4 item">
-            <img src="http://onthidaihoc.online//media/com_vquiz/vquiz/images/photoupload/thumbs/thumb_1521529921_mon-toan.png" width="300">
+            <img src="http://onthidaihoc.online//media/com_vquiz/vquiz/images/photoupload/thumbs/thumb_1521529921_mon-toan.png" width="100%">
             <p>Môn Toán</p>
           </div>
           <div class="col-md-4 item">
-            <img src="http://onthidaihoc.online//media/com_vquiz/vquiz/images/photoupload/thumbs/thumb_1521529921_mon-toan.png" width="300">
+            <img src="http://onthidaihoc.online//media/com_vquiz/vquiz/images/photoupload/thumbs/thumb_1521529921_mon-toan.png" width="100%">
             <p>Môn Toán</p>
           </div>
         </div>
