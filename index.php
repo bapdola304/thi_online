@@ -56,6 +56,9 @@
          include "include/ketqua.php";
          include "include/footer.html";
     }
+      else if(isset($_GET['a']) && $_GET['a']=='taode'){
+         include "include/taode.php";
+    }
     else{
          include "include/header.php";
 

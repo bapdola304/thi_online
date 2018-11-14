@@ -4,6 +4,14 @@ $expiry = time() + 3600;
 setcookie('mycookie', $expiry, $expiry);
 }
 ?>
+<?php
+  $sql = "SELECT * FROM sinhhoc ORDER BY RAND() LIMIT 25";
+  $sqlkq = mysqli_query($connect,$sql);
+  $i =0;
+  $socau = mysqli_num_rows($sqlkq);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <title>Vào Thi</title>
@@ -24,7 +32,10 @@ setcookie('mycookie', $expiry, $expiry);
     <div class="content">
       <div class="col-md-8 left">
         <h2>Kỳ thi THPTQG 2018 - Đề thi minh hoạ</h2>
-        <?php for($i=1; $i<=5; $i++) {?>
+        <?php
+            while ($row=mysqli_fetch_array($sqlkq)) {
+              $i++;
+      ?>
           <div class="row">
         <div class="motcau" value="<?php echo $i ?>">
           <input type="hidden" id="valcau<?php echo $i ?>" value="<?php echo $i ?>">
@@ -32,10 +43,10 @@ setcookie('mycookie', $expiry, $expiry);
             <p style="width: 150px">Câu <?php echo $i ?>: </p>
           </div>
           <form action="index.php?a=ketqua" method="POST">
-            <div class="dethi">
-              <div class="decauhoi col-md-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, sequi!</div>
+            <div class="dethi col-md-12">
+              <div class="decauhoi col-md-5"><?php echo $row['cauhoi']; ?></div>
               <div class="dehinh col-md-7">
-                <img src="http://onthidaihoc.online/images/Screen_Shot_20180320_at_12332_PM.png" alt="" width="100%" height="100%">
+                <img src="../hinh/<?php echo $row['hinhch']; ?>" alt="" width="100%" height="100%">
               </div>
             </div>
             <div class="traloi">
@@ -46,49 +57,49 @@ setcookie('mycookie', $expiry, $expiry);
                 
                 <div class="item-traloi col-md-3" style="padding:0">
                   <label class="radio-inline"  data-id="valcau<?php echo $i ?>">
-                    <input type="radio" name="<?php echo $i ?>" id="cau1" data-id="valcau<?php echo $i ?>" value="a" class="option-input radio">A
+                    <input type="radio" name="<?php echo $row['id_sinhhoc'] ?>" id="cau1" data-id="valcau<?php echo $i ?>" value="A" class="option-input radio">A
                   </label>
                   <div class="text-traloi col-md-6" style="padding:0">
-                    A. Lorem ipsum dolor sit.
+                   <?php echo $row['A']; ?>
                   </div>
                   <div class="img-traloi col-md-6 " style="padding:0">
-                    <img src="http://onthidaihoc.online/images/Screen_Shot_20180320_at_12332_PM.png" alt="" width="100%" height="100%">
+                    <img src="../hinh/<?php echo $row['AH']; ?>" alt="" width="100%" height="100%">
                   </div>
                 </div>
 
                  <div class="item-traloi col-md-3" style="padding:0">
                   <label class="radio-inline"  data-id="valcau<?php echo $i ?>">
-                    <input type="radio" name="<?php echo $i ?>" id="cau1" data-id="valcau<?php echo $i ?>" value="b" class="option-input radio">B
+                    <input type="radio" name="<?php echo $row['id_sinhhoc'] ?>" id="cau1" data-id="valcau<?php echo $i ?>" value="B" class="option-input radio">B
                   </label>
                   <div class="text-traloi col-md-6" style="padding:0">
-                    A. Lorem ipsum dolor sit.
+                    <?php echo $row['B']; ?>
                   </div>
                   <div class="img-traloi col-md-6 " style="padding:0">
-                    <img src="http://onthidaihoc.online/images/Screen_Shot_20180320_at_12332_PM.png" alt="" width="100%" height="100%">
+                    <img src="../hinh/<?php echo $row['AH']; ?>" alt="" width="100%" height="100%">
                   </div>
                 </div>
 
                  <div class="item-traloi col-md-3" style="padding:0">
                   <label class="radio-inline"  data-id="valcau<?php echo $i ?>">
-                    <input type="radio" name="<?php echo $i ?>" id="cau1" data-id="valcau<?php echo $i ?>" value="c" class="option-input radio">C
+                    <input type="radio" name="<?php echo $row['id_sinhhoc'] ?>" id="cau1" data-id="valcau<?php echo $i ?>" value="C" class="option-input radio">C
                   </label>
                   <div class="text-traloi col-md-6" style="padding:0">
-                    A. Lorem ipsum dolor sit.
+                    <?php echo $row['C']; ?>
                   </div>
                   <div class="img-traloi col-md-6 " style="padding:0">
-                    <img src="http://onthidaihoc.online/images/Screen_Shot_20180320_at_12332_PM.png" alt="" width="100%" height="100%">
+                    <img src="../hinh/<?php echo $row['AH']; ?>" alt="" width="100%" height="100%">
                   </div>
                 </div>
 
                  <div class="item-traloi col-md-3" style="padding:0">
                     <label class="radio-inline"  data-id="valcau<?php echo $i ?>">
-                      <input type="radio" name="<?php echo $i ?>" id="cau1" data-id="valcau<?php echo $i ?>" value="d" class="option-input radio">D
+                      <input type="radio" name="<?php echo $row['id_sinhhoc'] ?>" id="cau1" data-id="valcau<?php echo $i ?>" value="C" class="option-input radio">D
                     </label>
                     <div class="text-traloi col-md-6" style="padding:0">
-                      A. Lorem ipsum dolor sit.
+                     <?php echo $row['D']; ?>
                     </div>
                     <div class="img-traloi col-md-6 " style="padding:0">
-                      <img src="http://onthidaihoc.online/images/Screen_Shot_20180320_at_12332_PM.png" alt="" width="100%" height="100%">
+                     <img src="../hinh/<?php echo $row['AH']; ?>" alt="" width="100%" height="100%">
                     </div>
                   </div>
               </div>
@@ -109,14 +120,14 @@ setcookie('mycookie', $expiry, $expiry);
             <div class="content-thi">
               <p>Kiểm Tra Môn:  Toan</p>
               <p>Thời Gian Làm Bài:  60p</p>
-              <p>Tổng Số Câu Hỏi: 40 câu</p>
+              <p>Tổng Số Câu Hỏi: <?php echo $socau ?></p>
               <div id="countdown">
                 <p>Thời Gian</p>
                 <h1 id="time">00:00</h1>
               </div>
               <div class="list-cauhoi">
                 <ul class="text-center">
-                  <?php for($i=1; $i<=5; $i++) {?>
+                  <?php for($i=1; $i<=$socau; $i++) {?>
                   <li class="cau<?php echo $i ?>">Câu <?php echo $i ?></li>
                   <?php } ?>
                 </ul>
@@ -128,7 +139,7 @@ setcookie('mycookie', $expiry, $expiry);
               </div>
             </form>
              <div class="col-md-12 nopbai">
-                <button class="btn btn-primary col-md-6" id="kt" style="margin-top: -30px;">Nộp Bài</button>
+                <button class="btn btn-primary col-md-6" id="kt">Nộp Bài</button>
               </div>
           </div>
         </div>
@@ -225,7 +236,7 @@ for (var i=0; i<inputElems.length; i++) {
     }
 }
 swal({
-  title: `Ban Da lam ${count} / 5 cau. Ban co chac muon nop khong?`,
+  title: `Ban Da lam ${count} / <?php echo $socau ?> cau. Ban co chac muon nop khong?`,
   type: "warning",
   showCancelButton: true,
   confirmButtonClass: "btn-danger",

@@ -46,7 +46,6 @@ body{
 	text-align:center;
 }
 .right{
-	margin-top: 50px;
 	margin-left: 30px;
 }
 .right p{
@@ -102,8 +101,8 @@ body{
     height: 200px;
     border-radius: 50%;
     background-color: orange;
-    margin-top: 15%;
-    margin-bottom: 15%;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 #countdown p{
 	margin-top: 45px;
@@ -188,12 +187,17 @@ body{
 }
 .thi button{
   padding: 15px 20px;
-  margin-top: 50px;
+  margin-top: -25px;
   font-size: 18px;
 }
 .navbar-default{
 	background-color: #bcd6de;
 	border-color:none !important;
+}
+
+.napde{
+	padding:0;
+	margin-top: 20px;
 }
 
 /*css-radio*/

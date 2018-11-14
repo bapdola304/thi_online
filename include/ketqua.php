@@ -1,9 +1,37 @@
+<?php
+  
+
+
+  $sql = "select * from sinhhoc";
+  $query = mysqli_query($connect,$sql);
 
 
 
-<?php 
-    $arr = $_POST;
-    var_dump($arr);
+     $arr = $_POST;
+     var_dump($arr);
+    $dung =0;
+    $sai = 0;
+    foreach ($arr as $key => $value) {
+      if(is_numeric($key)){
+
+
+        $sql1 = "select DA from sinhhoc where id_sinhhoc = '$key' limit 1";
+
+        $query1 = mysqli_query($connect,$sql1);
+
+        $dapan = mysqli_fetch_array($query1);
+
+        if($value == $dapan['DA']){
+          echo "cau {$key}  dung </br>";
+          $dung ++;
+        }else{
+          echo "cau {$key} sai </br>";
+          $sai++;
+        }
+      }
+    }
+    echo "co {$dung} cau dung </br>";
+    echo "co {$sai} cau sai";
 
 
  ?>
@@ -29,7 +57,7 @@
               </div>
             </div>
             <div class="col-md-7 socau">
-              <p>Đúng 0 câu trên tổng số 20 câu</p>
+              <p>Đúng <?php echo $dung ?> câu trên tổng số 25 câu</p>
               <p style="color:red">Cố gắng lần sau nhé!</p>
             </div>
           </div>
@@ -63,7 +91,7 @@
           <div class="bang2">
             <p>Thi Thử Môn: Toán</p>
             <p>Thời Gian Làm Bài: 45p</p>
-            <p>Tổng Số Câu Hỏi: 20 Câu</p>
+            <p>Tổng Số Câu Hỏi: 25 Câu</p>
           </div>
           <div class="nutxem">
             <button class="btn btn-primary">Xem Đáp Án</button>
