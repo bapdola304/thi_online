@@ -43,7 +43,10 @@ if (isset($_POST['btnGui'])) {
   }
 
 ?>
-
+ <?php 
+    $themmon = "select * from monthi";
+    $query = mysqli_query($connect,$themmon);
+?>
 
 
 <!DOCTYPE html>
@@ -62,10 +65,15 @@ if (isset($_POST['btnGui'])) {
             <div class="chontg">
           <form class="form-inline" method="POST" enctype="multipart/form-data">
               <button class="btn btn-primary">Môn</button>
+
               <select id="inputState" class="form-control" style="width: 50%;display: inline;" name="mon">
-                <option selected value="sinhhoc">Sinh</option>
-                <option>Toán</option>
-                <option>Lý</option>
+
+              <?php while ($row = mysqli_fetch_array($query)) {
+              
+               ?>
+                <option selected value="<?php echo $row['mamon'] ?>"><?php echo $row['tenmon'] ?></option>
+              
+              <?php } ?>
               </select>
               <div class="napde col-md-12">
                    

@@ -94,7 +94,7 @@
             <p>Tổng Số Câu Hỏi: 25 Câu</p>
           </div>
           <div class="nutxem">
-            <button class="btn btn-primary">Xem Đáp Án</button>
+            <a href="index.php?a=xemdapan"><button class="btn btn-primary">Xem Đáp Án</button></a>
           </div>
         </div>
       </div>

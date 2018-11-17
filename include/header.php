@@ -34,7 +34,7 @@
             </div>
             <div class="col-md-2"></div>
             <div class="thi">
-                <a href="index.php?a=chonmon"><button class="btn btn-primary">Vào Thi Ngay</button></a>
+                <a href="index.php?a=chonmon"><button class="btn btn-primary vaothi">Vào Thi Ngay</button></a>
             </div>
         </div>
     </div>

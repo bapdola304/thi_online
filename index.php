@@ -59,6 +59,9 @@
       else if(isset($_GET['a']) && $_GET['a']=='taode'){
          include "include/taode.php";
     }
+      else if(isset($_GET['a']) && $_GET['a']=='xemdapan'){
+         include "include/xemdapan.php";
+    }
     else{
          include "include/header.php";
 

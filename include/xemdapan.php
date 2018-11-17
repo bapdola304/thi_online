@@ -1,19 +1,3 @@
-<?php
-if(!isset($_COOKIE['mycookie'])){
-$expiry = time() + 3600;
-setcookie('mycookie', $expiry, $expiry);
-}
-?>
-<?php
-  $sql = "SELECT * FROM sinhhoc ORDER BY RAND() LIMIT 25";
-  $sqlkq = mysqli_query($connect,$sql);
-  $i =0;
-  $socau = mysqli_num_rows($sqlkq);
-  $row1=array();
-
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
   <title>Vào Thi</title>
@@ -29,14 +13,19 @@ setcookie('mycookie', $expiry, $expiry);
   echo round(($_COOKIE['mycookie'] - time())/60 - 1,1);
   }
   ?>">
+  <?php $mangcauhoi = $_SESSION["mangcauhoi"];
+  $i=0;
+
+   ?>
   <div class="container" style="width: 1390px;">
     <?php include('menu.html') ?>
     <div class="content">
       <div class="col-md-8 left">
         <h2>Kỳ thi THPTQG 2018 - Đề thi minh hoạ</h2>
         <?php
-            while ($row=mysqli_fetch_array($sqlkq)) {
-              array_push($row1, $row);
+            foreach ($mangcauhoi as $row) {
+              
+            
               $i++;
       ?>
           <div class="row">
@@ -44,6 +33,7 @@ setcookie('mycookie', $expiry, $expiry);
           <input type="hidden" id="valcau<?php echo $i ?>" value="<?php echo $i ?>">
           <div class="cau">
             <p style="width: 150px">Câu <?php echo $i ?>: </p>
+            <h3><b>Dap An Dung: <?php echo $row['DA'] ?></b></h3>
           </div>
           <form action="index.php?a=ketqua" method="POST">
             <div class="dethi col-md-12">
@@ -123,7 +113,7 @@ setcookie('mycookie', $expiry, $expiry);
             <div class="content-thi">
               <p>Kiểm Tra Môn:  Toan</p>
               <p>Thời Gian Làm Bài:  60p</p>
-              <p>Tổng Số Câu Hỏi: <?php echo $socau ?></p>
+              <p>Tổng Số Câu Hỏi: 25</p>
               <div id="countdown">
                 <p>Thời Gian</p>
                 <h1 id="time">00:00</h1>
@@ -152,114 +142,3 @@ setcookie('mycookie', $expiry, $expiry);
     
   </div>
 </body>
-<?php
-if($_SESSION["mangcauhoi"]){
-      session_unset($_SESSION["mangcauhoi"]);
-      $_SESSION["mangcauhoi"] = $row1;
-}
-    var_dump( $_SESSION["mangcauhoi"]);
-
- ?>
-<script type="text/javascript">
-function tick(){
-// grab the h1
-var timeDisplay = document.getElementById("time");
-// turn the seconds into mm:ss
-var min = Math.floor(secondsRemaining / 60);
-var sec = secondsRemaining - (min * 60);
-//add a leading zero (as a string value) if seconds less than 10
-if (sec < 10) {
-sec = "0" + sec;
-}
-if (min < 10) {
-min = "0" + min;
-}
-// concatenate with colon
-var message = min.toString() + ":" + sec;
-// now change the display
-timeDisplay.innerHTML = message;
-//subtract from seconds remaining
-secondsRemaining--;
-if(min ==0 && sec==0){
-clearInterval(intervalHandle);
-swal({
-title: "Hết Giờ",
-text: "Hệ Thống Tự Động Nộp Bài",
-type: "warning",
-confirmButton: false,
-closeOnConfirm: false
-})
-function nopbai() {
-$('#nopbai').click();
-}
-setTimeout(nopbai,2000);
-}
-}
-function startCountdown(){
-var thoigian = document.getElementById("thoigian").value;
-var minutes = thoigian;
-secondsRemaining = minutes * 60;
-
-//every second, call the "tick" function
-// have to make it into a variable so that you can stop the interval later!!!
-intervalHandle = setInterval(tick, 1000);
-}
-window.onload = function(){
-startCountdown();
-// window.location.reload();
-//   window.location.reload().stop();
-swal({
-title: "Chú Ý",
-text: "Bạn đang thực hiện bài thi. Vui lòng không bấm F5 hoặc tải lại trình duyệt. Để tránh bị mất kết quả đang thi",
-type: "warning"
-});
-}
-</script>
-
-<script type="text/javascript">
-var socau = 0;
-var id;
-$(document).ready(function(){
-$('.traloi').mousemove(function(e){
-var id1 = e.target.dataset.id;
-var id = $('#'+id1).val();
-// console.log(id);
-$('.traloi' + id).click(function(){
-
-socau = socau + 1;
-console.log(socau);
-// console.log(id);
-$('.cau'+id).addClass('active-cauhoi');
-});
-});
-});
-</script>
-
-<script type="text/javascript">
-var ktnopbai = document.getElementById('kt');
-
-ktnopbai.addEventListener('click',function(){
-var inputElems = document.getElementsByTagName("input");
-  var count = 0;
-for (var i=0; i<inputElems.length; i++) {
-    if (inputElems[i].type === "radio" && inputElems[i].checked === true){
-    count++;
-    }
-}
-swal({
-  title: `Ban Da lam ${count} / <?php echo $socau ?> cau. Ban co chac muon nop khong?`,
-  type: "warning",
-  showCancelButton: true,
-  confirmButtonClass: "btn-danger",
-  confirmButtonText: "Yes",
-  closeOnConfirm: false
-},
-function(){
-  $('#nopbai').click();
-});
-
-});
-
-
-</script>
-</html>
